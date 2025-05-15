@@ -3,6 +3,9 @@
 
 ### ⛺ SleepOutside Starter Code
 
+ ***IMPORTANTN***
+ Each member of the team should run the format and lint command before they commit after making any changes throughout the course.
+ ***IMPORTANT***
  - This repository is the start of the SleepOutside web application project for WDD 330. The repository contains branches which are checkpoints for the team and individual assignments throughout the course.
 
  - https://byui-cse.github.io/wdd330-ww-course/week01/team.html
