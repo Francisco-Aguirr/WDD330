@@ -38,3 +38,36 @@ export function renderListWithTemplate(template, parentElement, list, position =
   }
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
+
+/// Función para cargar templates HTML
+export async function loadTemplate(path) {
+  const response = await fetch(path);
+  if (!response.ok) {
+    throw new Error(`Failed to load template: ${path}`);
+  }
+  return await response.text();
+}
+
+// Función para renderizar un template (sin loop)
+export function renderWithTemplate(template, parentElement, data = null, callback = null) {
+  parentElement.innerHTML = template;
+  if (callback && data) {
+    callback(data);
+  }
+}
+
+// Función principal para cargar header/footer
+export async function loadHeaderFooter() {
+  try {
+    // Cargar templates
+    const headerTemplate = await loadTemplate("/partials/header.html");
+    const footerTemplate = await loadTemplate("/partials/footer.html");
+
+    // Renderizar
+    renderWithTemplate(headerTemplate, document.querySelector("#main-header"));
+    renderWithTemplate(footerTemplate, document.querySelector("#main-footer"));
+
+  } catch (error) {
+    console.error("Error loading header/footer:", error);
+  }
+}
