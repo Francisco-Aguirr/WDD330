@@ -1,5 +1,9 @@
 import ProductData from "./ProductData.mjs";
 import ProductList from "./ProductList.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
+
+// Cargar header/footer
+loadHeaderFooter();
 
 const dataSource = new ProductData("tents");
 const element = document.querySelector(".product-list");
@@ -17,7 +21,7 @@ async function init() {
   }
 
   const productList = new ProductList("Tents", dataSource, element);
-  productList.renderList(products); // 👈 usamos renderList directamente
+  productList.renderList(products); //  usamos renderList directamente
 }
 
 init();
