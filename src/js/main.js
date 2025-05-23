@@ -24,4 +24,32 @@ async function init() {
   productList.renderList(products); //  usamos renderList directamente
 }
 
+// modal register
+function showRegisterModal() {
+  const modalShown = localStorage.getItem("registerModalShown");
+
+  if (!modalShown) {
+    const modal = document.getElementById("register-modal");
+    const closeButton = modal.querySelector(".close-modal");
+
+    modal.classList.remove("hidden");
+
+    // Cierra al hacer click en el botón
+    closeButton.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      localStorage.setItem("registerModalShown", "true");
+    });
+
+    // Cierra si se hace click fuera del contenido del modal
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.classList.add("hidden");
+        localStorage.setItem("registerModalShown", "true");
+      }
+    });
+  }
+}
+
+showRegisterModal();
+
 init();
