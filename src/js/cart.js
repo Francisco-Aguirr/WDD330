@@ -4,7 +4,8 @@ loadHeaderFooter();
 function renderCartContents() {
   const cartItems = getLocalStorage("so-cart") || [];
   if (cartItems.length === 0) {
-    document.querySelector(".product-list").innerHTML = "<p>Your cart is empty.</p>";
+    document.querySelector(".product-list").innerHTML =
+      "<p>Your cart is empty.</p>";
     return;
   }
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
@@ -14,7 +15,7 @@ function renderCartContents() {
 function cartItemTemplate(item) {
   return `<li class="cart-card divider">
     <a href="#" class="cart-card__image">
-      <img src="${item.Images?.PrimaryMedium || 'default-image.jpg'}" alt="${item.Name}" />
+      <img src="${item.Images?.PrimaryMedium || "default-image.jpg"}" alt="${item.Name}" />
     </a>
     <a href="#">
       <h2 class="card__name">${item.Name}</h2>
