@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SleepOutside | product lis</title>
+    <title>SleepOutside | Product List</title>
     <link rel="stylesheet" href="../css/style.css" />
     <script src="../js/product-listing.js" type="module"></script>
     <script src="../js/ProductList.mjs" type="module"></script>
@@ -13,10 +13,18 @@
     <main class="divider">
       <section class="products">
         <h2>Top Products</h2>
-        <!-- CONTENEDOR DINÁMICO (antes tenía lista estática) -->
         <ul class="product-list" id="product-list-container"></ul>
       </section>
     </main>
+
+    <!-- Modal de Quick View -->
+    <div id="quickViewModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="quickViewContent"></div>
+      </div>
+    </div>
+
     <footer id="main-footer"></footer>
   </body>
 </html>
