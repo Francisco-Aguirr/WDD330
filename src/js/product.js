@@ -1,8 +1,8 @@
 import { getParam, getLocalStorage, setLocalStorage } from "./utils.mjs";
-import ProductData from "./ProductData.mjs";
+import ExternalServices from "./ExternalServices.mjs";
 import ProductDetails from "./ProductDetails.mjs";
 
-const dataSource = new ProductData();
+const dataSource = new ExternalServices();
 const productID = getParam("id");
 
 const product = new ProductDetails(productID, dataSource);

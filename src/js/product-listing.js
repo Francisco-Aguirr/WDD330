@@ -1,4 +1,4 @@
-import ProductData from "./ProductData.mjs";
+import ExternalServices from "./ExternalServices.mjs";
 import ProductList from "./ProductList.mjs";
 import { loadHeaderFooter, getParam } from "./utils.mjs";
 
@@ -18,6 +18,6 @@ if (titleElement) {
 }
 
 // Crear instancias y mostrar productos
-const dataSource = new ProductData(); // sin pasar categoría ahora
+const dataSource = new ExternalServices(); // sin pasar categoría ahora
 const productList = new ProductList(category, dataSource, element);
 productList.init(); // esta se encarga de llamar a getData(category)

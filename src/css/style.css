@@ -682,3 +682,21 @@ input {
         position: static;
     }
 }
+
+.error {
+    border: 2px solid #ff0000 !important;
+    background-color: #ffeeee;
+}
+
+.error-message {
+    color: #ff0000;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ff0000;
+    border-radius: 4px;
+    display: none; /* Se mostrará via JavaScript cuando haya errores */
+}
+
+input:invalid {
+    border-color: #ffcc00;
+}
